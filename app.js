@@ -62,7 +62,8 @@ function generar() {
 }
 
 function descargarSQL() {
-  let query = "CREATE DATABASE IF NOT EXISTS sistema_escolar  CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci ENGINE InnoDB;\n";
+  let query = "DROP DATABASE IF EXISTS sistema_escolar;\n";
+  query += "CREATE DATABASE IF NOT EXISTS sistema_escolar  CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;\n";
   query += "USE sistema_escolar;\n";
   query+= `CREATE TABLE IF NOT EXISTS alumnos(
     matricula VARCHAR(255) NOT NULL UNIQUE,
